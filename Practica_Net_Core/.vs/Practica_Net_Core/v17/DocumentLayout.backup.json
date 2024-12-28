@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\yailp\\source\\repos\\Practica_Net_Core\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{93F40E5A-807E-4F95-90CB-C6B9C0D8A5F5}|Practica_Net_Core\\Practica_Net_Core.csproj|c:\\users\\yailp\\source\\repos\\practica_net_core\\practica_net_core\\pages\\editarproducto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{93F40E5A-807E-4F95-90CB-C6B9C0D8A5F5}|Practica_Net_Core\\Practica_Net_Core.csproj|solutionrelative:practica_net_core\\pages\\editarproducto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93F40E5A-807E-4F95-90CB-C6B9C0D8A5F5}|Practica_Net_Core\\Practica_Net_Core.csproj|c:\\users\\yailp\\source\\repos\\practica_net_core\\practica_net_core\\pages\\registrarproducto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{93F40E5A-807E-4F95-90CB-C6B9C0D8A5F5}|Practica_Net_Core\\Practica_Net_Core.csproj|solutionrelative:practica_net_core\\pages\\registrarproducto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93F40E5A-807E-4F95-90CB-C6B9C0D8A5F5}|Practica_Net_Core\\Practica_Net_Core.csproj|c:\\users\\yailp\\source\\repos\\practica_net_core\\practica_net_core\\pages\\editarproducto.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93F40E5A-807E-4F95-90CB-C6B9C0D8A5F5}|Practica_Net_Core\\Practica_Net_Core.csproj|solutionrelative:practica_net_core\\pages\\editarproducto.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RegistrarProducto.cshtml",
+              "DocumentMoniker": "C:\\Users\\yailp\\source\\repos\\Practica_Net_Core\\Practica_Net_Core\\Pages\\RegistrarProducto.cshtml",
+              "RelativeDocumentMoniker": "Practica_Net_Core\\Pages\\RegistrarProducto.cshtml",
+              "ToolTip": "C:\\Users\\yailp\\source\\repos\\Practica_Net_Core\\Practica_Net_Core\\Pages\\RegistrarProducto.cshtml",
+              "RelativeToolTip": "Practica_Net_Core\\Pages\\RegistrarProducto.cshtml",
+              "ViewState": "AgIAAKIAAAAAAAAAAAAAALIAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-28T00:30:29.019Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EditarProducto.cshtml",
+              "DocumentMoniker": "C:\\Users\\yailp\\source\\repos\\Practica_Net_Core\\Practica_Net_Core\\Pages\\EditarProducto.cshtml",
+              "RelativeDocumentMoniker": "Practica_Net_Core\\Pages\\EditarProducto.cshtml",
+              "ToolTip": "C:\\Users\\yailp\\source\\repos\\Practica_Net_Core\\Practica_Net_Core\\Pages\\EditarProducto.cshtml",
+              "RelativeToolTip": "Practica_Net_Core\\Pages\\EditarProducto.cshtml",
+              "ViewState": "AgIAAKIAAAAAAAAAAAAqwLIAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-28T00:29:45.441Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EditarProducto.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\yailp\\source\\repos\\Practica_Net_Core\\Practica_Net_Core\\Pages\\EditarProducto.cshtml.cs",
+              "RelativeDocumentMoniker": "Practica_Net_Core\\Pages\\EditarProducto.cshtml.cs",
+              "ToolTip": "C:\\Users\\yailp\\source\\repos\\Practica_Net_Core\\Practica_Net_Core\\Pages\\EditarProducto.cshtml.cs",
+              "RelativeToolTip": "Practica_Net_Core\\Pages\\EditarProducto.cshtml.cs",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAcwF0AAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-27T23:27:58.143Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

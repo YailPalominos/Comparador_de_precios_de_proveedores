@@ -1,0 +1,44 @@
+﻿@page
+@model Practica_Net_Core.Pages.RegistrarProveedor
+@{
+    ViewData["Title"] = "Registrar Proveedor";
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success" role="alert" id="successMessage"> @TempData["SuccessMessage"] </div>
+}
+
+<h1>Registrar Proveedor</h1>
+
+<form method="post">
+    <div class="form-group" style="margin-bottom: 15px;">
+        <label class="control-label">Clave:</label>
+        <input asp-for="Proveedor.clave" class="form-control" style="width: 150px;" />
+        <span asp-validation-for="Proveedor.clave" class="text-danger"></span>
+    </div>
+    <div class="form-group" style="margin-bottom: 15px;">
+        <label class="control-label">Nombre:</label>
+        <input asp-for="Proveedor.nombre" class="form-control" style="width: 400px;" />
+        <span asp-validation-for="Proveedor.nombre" class="text-danger"></span>
+    </div>
+    <div class="form-group" style="margin-bottom: 15px;">
+        <label class="control-label">Descripción:</label>
+        <input asp-for="Proveedor.descripcion" class="form-control" style="width: 400px;" />
+        <span asp-validation-for="Proveedor.descripcion" class="text-danger"></span>
+    </div>
+    <div class="form-group" style="margin-bottom: 15px;">
+        <input type="submit" value="Registrar" class="btn btn-primary" />
+        <a asp-page="PanelProveedores" class="btn btn-secondary" style="margin-left: 10px;">Volver</a>
+    </div>
+</form>
+
+<script>
+    // Ocultar el mensaje de éxito después de 2 segundos (2000 milisegundos)
+    setTimeout(function () {
+            var successMessage = document.getElementById("successMessage");
+            if (successMessage) {
+                successMessage.style.display = "none";
+            }
+        }, 2000);
+</script>

@@ -1,0 +1,46 @@
+﻿@page "{clave}"
+@model Practica_Net_Core.Pages.EditarTipoProducto
+@{
+    ViewData["Title"] = "Editar Tipo de Producto";
+}
+
+<h1>Editar Tipo de Producto</h1>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success" role="alert" id="successMessage">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+<h3>Clave: @Model.tipoProducto.clave</h3>
+
+<form method="post">
+    <input type="hidden" asp-for="tipoProducto.clave" />
+    <div class="form-group" style="margin-bottom: 15px;">
+        <label class="control-label">Nombre:</label>
+        <input asp-for="tipoProducto.nombre" class="form-control" style="width: 400px;" />
+        <span asp-validation-for="tipoProducto.nombre" class="text-danger"></span>
+    </div>
+
+    <div class="form-group" style="margin-bottom: 15px;">
+        <label class="control-label">Descripción:</label>
+        <input asp-for="tipoProducto.descripcion" class="form-control" style="width: 400px;" />
+        <span asp-validation-for="tipoProducto.descripcion" class="text-danger"></span>
+    </div>
+
+    <div class="form-group" style="margin-bottom: 15px;">
+        <input type="submit" value="Editar" class="btn btn-primary" />
+        <a asp-page="PanelTiposProductos" class="btn btn-secondary" style="margin-left: 10px;">Volver</a>
+    </div>
+</form>
+
+<script>
+    // Ocultar el mensaje de éxito después de 2 segundos (2000 milisegundos)
+    setTimeout(function () {
+        var successMessage = document.getElementById("successMessage");
+        if (successMessage) {
+            successMessage.style.display = "none";
+        }
+    }, 2000);
+</script>

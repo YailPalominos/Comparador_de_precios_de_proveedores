@@ -1,0 +1,44 @@
+﻿@page
+@model Practica_Net_Core.Pages.RegistrarTipoProducto
+@{
+    ViewData["Title"] = "Registrar Tipo de Producto";
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success" role="alert" id="successMessage"> @TempData["SuccessMessage"] </div>
+}
+
+<h1>Registrar Tipo de Producto</h1>
+
+<form method="post">
+    <div class="form-group" style="margin-bottom: 15px;">
+        <label class="control-label">Clave:</label>
+        <input asp-for="TipoProducto.clave" class="form-control" style="width: 150px;" />
+        <span asp-validation-for="TipoProducto.clave" class="text-danger"></span>
+    </div>
+    <div class="form-group" style="margin-bottom: 15px;">
+        <label class="control-label">Nombre:</label>
+        <input asp-for="TipoProducto.nombre" class="form-control" style="width: 400px;" />
+        <span asp-validation-for="TipoProducto.nombre" class="text-danger"></span>
+    </div>
+    <div class="form-group" style="margin-bottom: 15px;">
+        <label class="control-label">Descripción:</label>
+        <input asp-for="TipoProducto.descripcion" class="form-control" style="width: 400px;" />
+        <span asp-validation-for="TipoProducto.descripcion" class="text-danger"></span>
+    </div>
+    <div class="form-group" style="margin-bottom: 15px;">
+        <input type="submit" value="Registrar" class="btn btn-primary" />
+        <a asp-page="PanelTiposProductos" class="btn btn-secondary" style="margin-left: 10px;">Volver</a>
+    </div>
+</form>
+
+<script>
+    // Ocultar el mensaje de éxito después de 2 segundos (2000 milisegundos)
+    setTimeout(function () {
+            var successMessage = document.getElementById("successMessage");
+            if (successMessage) {
+                successMessage.style.display = "none";
+            }
+        }, 2000);
+</script>

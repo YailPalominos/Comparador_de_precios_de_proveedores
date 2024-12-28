@@ -1,0 +1,79 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Practica_Net_Core
+build_property.RootNamespace = Practica_Net_Core
+build_property.ProjectDir = C:\Users\yailp\source\repos\Practica_Net_Core\Practica_Net_Core\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\yailp\source\repos\Practica_Net_Core\Practica_Net_Core
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/yailp/source/repos/Practica_Net_Core/Practica_Net_Core/Pages/EditarProducto.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdGFyUHJvZHVjdG8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yailp/source/repos/Practica_Net_Core/Practica_Net_Core/Pages/EditarProveedor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdGFyUHJvdmVlZG9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yailp/source/repos/Practica_Net_Core/Practica_Net_Core/Pages/EditarTipoProducto.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdGFyVGlwb1Byb2R1Y3RvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yailp/source/repos/Practica_Net_Core/Practica_Net_Core/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yailp/source/repos/Practica_Net_Core/Practica_Net_Core/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yailp/source/repos/Practica_Net_Core/Practica_Net_Core/Pages/PanelProductos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFuZWxQcm9kdWN0b3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yailp/source/repos/Practica_Net_Core/Practica_Net_Core/Pages/PanelProveedores.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFuZWxQcm92ZWVkb3Jlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yailp/source/repos/Practica_Net_Core/Practica_Net_Core/Pages/PanelTiposProductos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFuZWxUaXBvc1Byb2R1Y3Rvcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yailp/source/repos/Practica_Net_Core/Practica_Net_Core/Pages/RegistrarProducto.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0cmFyUHJvZHVjdG8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yailp/source/repos/Practica_Net_Core/Practica_Net_Core/Pages/RegistrarProveedor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0cmFyUHJvdmVlZG9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yailp/source/repos/Practica_Net_Core/Practica_Net_Core/Pages/RegistrarTipoProducto.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0cmFyVGlwb1Byb2R1Y3RvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yailp/source/repos/Practica_Net_Core/Practica_Net_Core/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yailp/source/repos/Practica_Net_Core/Practica_Net_Core/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yailp/source/repos/Practica_Net_Core/Practica_Net_Core/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yailp/source/repos/Practica_Net_Core/Practica_Net_Core/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-aeptkfnb5n

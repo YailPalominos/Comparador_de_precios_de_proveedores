@@ -1,0 +1,49 @@
+﻿@page
+@model Practica_Net_Core.Pages.PanelProductos
+@{
+    ViewData["Title"] = "Lista de productos";
+}
+
+<h1>Productos</h1>
+@if (TempData["SuccessMessage"] != null)
+{
+     <div class="alert alert-success" role="alert" id="successMessage"> @TempData["SuccessMessage"] </div>
+}
+
+
+<p>
+    <a asp-page="RegistrarProducto" class="btn btn-primary">Crear Nuevo Producto</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Clave</th>
+            <th>Nombre</th>
+            <th>Tipo de Producto</th>
+            <th>Precio</th>
+            <th>Activo</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.productos)
+        {
+            <tr>
+                <td>@item.clave</td>
+                <td>@item.nombre</td>
+                <td>@item.tipo</td>
+                <td>@item.precio</td>
+                <td>@item.estatus</td>
+                <td>
+                    <form method="post" asp-page-handler="Delete" asp-route-clave="@item.clave" style="display:inline;"> <button type="submit" class="btn btn-sm btn-danger">Eliminar</button> </form>
+                    <a asp-page="EditarProducto" asp-route-clave="@item.clave" class="btn btn-sm btn-secondary">Editar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    setTimeout(function () { var successMessage = document.getElementById("successMessage"); if (successMessage) { successMessage.style.display = "none"; } }, 2000);
+</script>

@@ -1,0 +1,303 @@
+﻿@page
+@model Practica_Net_Core.Pages.RegistrarProducto
+@{
+    ViewData["Title"] = "Crear Producto";
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success" role="alert" id="successMessage"> @TempData["SuccessMessage"] </div>
+}
+
+<h1>Crear Producto</h1>
+
+<div class="container" style="display: flex; justify-content: center;">
+    <div class="row" style="width: 100%; max-width: 1200px;">
+        <!-- Formulario Principal -->
+        <div class="col-md-6" style="padding-right: 15px;">
+            <form id="formRegistrarProducto" method="post">
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label class="control-label">Clave:</label>
+                    <input asp-for="producto.clave" class="form-control" style="width: 150px;" id="clave" />
+                    <span asp-validation-for="producto.clave" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label class="control-label">Nombre:</label>
+                    <input asp-for="producto.nombre" class="form-control" style="width: 400px;" id="nombre" />
+                    <span asp-validation-for="producto.nombre" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label class="control-label">Tipo de Producto:</label>
+                    <select asp-for="producto.tipoProducto" class="form-control" style="width: 250px;" id="tipoProducto">
+                        @foreach (var tipoProducto in Model.TiposProductos)
+                        {
+                            <option value="@tipoProducto.clave">@tipoProducto.nombre</option>
+                        }
+                    </select>
+                    <span asp-validation-for="producto.tipoProducto" class="text-danger"></span>
+                </div>
+                <div class="form-group form-check" style="margin-bottom: 15px;">
+                    <input asp-for="producto.esActivo" type="checkbox" class="form-check-input" id="esActivo" />
+                    <label class="form-check-label">Activo:</label>
+                    <span asp-validation-for="producto.esActivo" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label class="control-label">Precio:</label>
+                    <input asp-for="producto.precio" type="number" step="0.01" min="0" class="form-control" style="width: 100px;" id="precio"/>
+                    <span asp-validation-for="producto.precio" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <input type="submit" value="Registrar" class="btn btn-primary" />
+                    <a asp-page="PanelProductos" class="btn btn-secondary" style="margin-left: 10px;">Volver</a>
+                </div>
+            </form>
+        </div>
+
+        <!-- Formulario de tabla intermedia -->
+        <div class="col-md-6" style="padding-left: 15px;">
+            <h3>Proveedores del producto</h3>
+            <form method="post" style="display: flex; flex-wrap: wrap;">
+                <div class="form-group" style="margin-bottom: 15px; padding-right: 10px; width: 50%;">
+                    <label class="control-label">Proveedor:</label>
+                    <select asp-for="productoProveedor.claveProveedor" class="form-control" id="claveProveedor">
+                        @foreach (var proveedor in Model.proveedores)
+                        {
+                            <option value="@proveedor.clave">@proveedor.nombre</option>
+                        }
+                    </select>
+                    <span asp-validation-for="productoProveedor.claveProveedor" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="margin-bottom: 15px; padding-right: 10px; width: 30%;">
+                    <label class="control-label">Clave de Producto:</label>
+                    <input asp-for="productoProveedor.claveProducto" class="form-control" id="claveProducto" />
+                    <span asp-validation-for="productoProveedor.claveProducto" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="margin-bottom: 15px; padding-right: 10px; width: 20%;">
+                    <label class="control-label">Costo:</label>
+                    <input asp-for="productoProveedor.costo" type="number" step="0.01" min="0" class="form-control" id="costo" />
+                    <span asp-validation-for="productoProveedor.costo" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="margin-bottom: 15px; display: flex; justify-content: center; width: 100%;">
+                    <button type="button" class="btn btn-success" id="agregarProveedorButton">Agregar Proveedor</button>
+                </div>
+            </form>
+
+            <div style="overflow-x: auto;">
+                <table class="table table-bordered" id="tablaProveedores">
+                    <thead>
+                        <tr>
+                            <th>Proveedor</th>
+                            <th>Clave</th>
+                            <th>Costo</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var proveedorProducto in Model.proveedoresProductos)
+                        {
+                            <tr>
+                                <td>@proveedorProducto.proveedor</td>
+                                <td>@proveedorProducto.claveProducto</td>
+                                <td>@proveedorProducto.costo</td>
+                                <td>
+                                    <div style="margin-right: 5px;"><button type="button" class="btn btn-warning">Editar</button></div>
+                                    <div style="margin-left: 5px;"><button type="button" class="btn btn-danger">Eliminar</button></div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+
+ document.getElementById("formRegistrarProducto").addEventListener("submit", function (event) {
+        event.preventDefault();
+        Registrar();
+ });
+
+ function Registrar() {
+    const producto = {
+        clave: document.getElementById("clave").value,
+        nombre: document.getElementById("nombre").value,
+        tipoProducto: document.getElementById("tipoProducto").value,
+        esActivo: document.getElementById("esActivo").checked,
+        precio: parseFloat(document.getElementById("precio").value)
+    };
+    
+    // Recopilar los proveedores desde la tabla
+    const proveedoresProductos = [];
+    const proveedoresRows = document.querySelectorAll("#tablaProveedores tbody tr");
+
+    proveedoresRows.forEach((row) => {
+        const proveedorId = row.cells[0].innerText;
+        const claveProducto = row.cells[1].innerText;
+        const costo = row.cells[2].innerText;
+
+        proveedoresProductos.push({
+            proveedor: proveedorId,
+            clave: claveProducto,
+            claveProveedor:"",
+            claveProducto:"",
+            costo: costo
+        });
+    });
+
+    // Verificar que haya al menos un proveedor
+    if (proveedoresProductos.length === 0) {
+        alert("Debe agregar al menos un proveedor.");
+        return;
+    }
+
+    // Crear el objeto ProductoRequest
+    const request = {
+        Producto: producto,
+        ProveedoresProductos: proveedoresProductos
+    };
+
+    // Validar los datos del formulario
+    if (!producto.clave || !producto.nombre || !producto.precio) {
+        alert("Por favor, complete todos los campos requeridos.");
+        return;
+    }
+
+    var token = document.querySelector('input[name="__RequestVerificationToken"]').value;
+
+
+    // Enviar los datos al servidor
+    fetch("/RegistrarProducto?handler=Registrar", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'RequestVerificationToken': token
+        },
+        body: JSON.stringify(request),
+    })
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error("Error al enviar los datos.");
+            }
+            return response.json();
+        })
+        .then((data) => {
+            alert("Producto registrado correctamente.");
+                window.location.href = '/PanelProductos';
+        })
+        .catch((error) => {
+            console.error(error);
+            alert("Hubo un problema al registrar el producto.");
+        });
+}
+
+
+    setTimeout(function () {
+        var successMessage = document.getElementById("successMessage");
+        if (successMessage) {
+            successMessage.style.display = "none";
+        }
+    }, 2000);
+
+    document.getElementById('agregarProveedorButton').addEventListener('click', function () {
+        var claveProveedor = document.getElementById('claveProveedor').value;
+        var claveProducto = document.getElementById('claveProducto').value;
+        var costo = document.getElementById('costo').value;
+
+        if (!claveProveedor || !claveProducto || !costo) {
+            alert('Por favor, complete todos los campos.');
+            return;
+        }
+
+        var productoProveedor = {
+            claveProveedor: claveProveedor,
+            claveProducto: claveProducto,
+            costo: costo
+        };
+
+        var token = document.querySelector('input[name="__RequestVerificationToken"]').value;
+
+        fetch('/RegistrarProducto?handler=AgregarRelacion', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'RequestVerificationToken': token
+            },
+            body: JSON.stringify(productoProveedor)
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data && data.proveedor && data.claveProducto && data.costo) {
+                    var tabla = document.getElementById('tablaProveedores').getElementsByTagName('tbody')[0];
+                    var newRow = tabla.insertRow();
+                    newRow.innerHTML = `
+                            <td>${data.proveedor}</td>
+                            <td>${data.claveProducto}</td>
+                            <td>${data.costo}</td>
+                            <td>
+                                <button type="button" class="btn btn-warning" onclick="editarProveedor(this)">Editar</button>
+                                <button type="button" class="btn btn-danger" onclick="eliminarProveedor(this)">Eliminar</button>
+                            </td>
+                        `;
+
+                    document.getElementById('claveProveedor').value = '';
+                    document.getElementById('claveProducto').value = '';
+                    document.getElementById('costo').value = '';
+                } else {
+                    console.error('Datos inválidos recibidos');
+                }
+            })
+            .catch(error => console.error('Error:', error));
+    });
+
+
+    function editarProveedor(button) {
+        var row = button.closest('tr');
+
+        // Obtener los valores de la fila seleccionada
+        var claveProveedor = row.cells[0].innerText;
+        var claveProducto = row.cells[1].innerText;
+        var costo = row.cells[2].innerText;
+
+        // Asignar los valores a los campos del formulario
+        document.getElementById('claveProducto').value = claveProducto;
+        document.getElementById('costo').value = costo;
+
+        // Seleccionar automáticamente el proveedor en el dropdown
+        var selectProveedor = document.getElementById('claveProveedor');
+        for (var i = 0; i < selectProveedor.options.length; i++) {
+            if (selectProveedor.options[i].text === claveProveedor) {
+                selectProveedor.selectedIndex = i;
+                break;
+            }
+        }
+        row.remove();
+    }
+
+    function eliminarProveedor(button) {
+        var row = button.closest('tr');
+        var claveProducto = row.cells[1].innerText;
+
+        var token = document.querySelector('input[name="__RequestVerificationToken"]').value;
+
+        fetch('/RegistrarProducto?handler=EliminarRelacion', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'RequestVerificationToken': token
+            },
+            body: JSON.stringify({ claveProducto: claveProducto })
+        })
+            .then(response => {
+                if (response.ok) {
+                    row.remove();
+                } else {
+                    alert('Error al eliminar el proveedor.');
+                }
+            })
+            .catch(error => console.error('Error:', error));
+    }
+</script>
